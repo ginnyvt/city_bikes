@@ -1,0 +1,18 @@
+version: "3.1"
+services:
+ db:
+  container_name: city_bikes
+  image: mariadb:10.9
+  restart: always
+  environment:
+   MARIADB_AUTO_UPGRADE: true
+   MARIADB_RANDOM_ROOT_PASSWORD: true
+   MARIADB_DATABASE: "city_bikes"
+   MARIADB_USER: "ginnyvt"
+   MARIADB_PASSWORD: "example"
+  ports:
+   - 3306:3306
+  volumes:
+   - ./db:/var/lib/mysql
+   - ./db-init.sql:/docker-entrypoint-initdb.d/db-init.sql
+   - ./output:/output
