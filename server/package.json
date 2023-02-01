@@ -1,0 +1,57 @@
+{
+  "name": "city_bikes_server",
+  "version": "0.1.0",
+  "description": "Server for city bikes project",
+  "main": "index.js",
+  "scripts": {
+    "build": "npx del-cli ./dist && tsc",
+    "start": "node ./dist/index.js",
+    "dev": "npx ts-node-dev ./src/index.ts ",
+    "lint": "eslint ./src --ext .ts --fix",
+    "release": "npx standard-version && git push --follow-tags origin main",
+    "test": "jest --coverage",
+    "test:w": "jest --coverage --watch"
+  },
+  "keywords": [
+    "node",
+    "typescript",
+    "inversify",
+    "template",
+    "jest",
+    "eslint",
+    "conventional",
+    "commitlint"
+  ],
+  "author": {
+    "name": "Ginny Tran",
+    "email": "ginny@powerkernel.com"
+  },
+  "license": "ISC",
+  "dependencies": {
+    "@prisma/client": "^4.9.0",
+    "apollo-server-core": "3.11.1",
+    "apollo-server-express": "3.11.1",
+    "config": "3.3.9",
+    "express": "4.18.2",
+    "graphql-tools": "8.3.16",
+    "inversify": "6.0.1",
+    "lodash": "^4.17.21",
+    "reflect-metadata": "0.1.13"
+  },
+  "devDependencies": {
+    "@types/config": "3.3.0",
+    "@types/jest": "29.4.0",
+    "@types/lodash": "^4.14.191",
+    "@types/node": "^18.11.18",
+    "@typescript-eslint/eslint-plugin": "5.49.0",
+    "@typescript-eslint/parser": "5.49.0",
+    "del-cli": "5.0.0",
+    "eslint": "8.33.0",
+    "eslint-config-prettier": "8.6.0",
+    "jest": "29.4.1",
+    "prettier": "2.8.3",
+    "prisma": "^4.9.0",
+    "ts-jest": "29.0.5",
+    "typescript": "4.9.4"
+  }
+}

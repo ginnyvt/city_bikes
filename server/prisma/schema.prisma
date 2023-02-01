@@ -1,0 +1,37 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+  previewFeatures = ["fullTextSearch", "fullTextIndex"]
+}
+
+datasource db {
+  provider = "mysql"
+  url      = env("DATABASE_URL")
+}
+
+model journeys {
+  id                Int      @id @default(autoincrement())
+  depart_station_id Int      @unique
+  depart_station    stations @relation("depart",fields: [depart_station_id], references: [id])
+  depart_time       DateTime @db.DateTime(0)
+  return_station_id Int      @unique
+  return_station    stations @relation("return", fields: [return_station_id], references: [id])
+  return_time       DateTime @db.DateTime(0)
+  distance          Int
+  duration          Int
+}
+
+model stations {
+  id         Int     @id
+  name       String  @db.VarChar(50)
+  address    String  @db.VarChar(50)
+  city       String  @db.VarChar(50)
+  operator   String  @db.VarChar(50)
+  capacities Int
+  lng        Decimal @db.Decimal(11, 8)
+  lat        Decimal @db.Decimal(11, 8)
+  depart_journey journeys? @relation("depart")
+  return_journey journeys? @relation("return")
+}

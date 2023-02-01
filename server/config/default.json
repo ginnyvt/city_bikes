@@ -1,0 +1,8 @@
+{
+  "env": "dev",
+  "port": 3000,
+  "pageSize": {
+    "default": 10,
+    "max": 200
+  }
+}
