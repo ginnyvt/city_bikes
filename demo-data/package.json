@@ -1,0 +1,24 @@
+{
+  "name": "demo-data",
+  "version": "0.1.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "process-stations": "npx ts-node-dev process-stations.ts",
+    "process-journeys": "npx ts-node-dev process-journeys.ts"
+  },
+  "keywords": [],
+  "author": "Ginny Tran",
+  "license": "MIT",
+  "devDependencies": {
+    "@types/async": "^3.2.16",
+    "@types/node": "^18.11.18",
+    "@types/validator": "^13.7.10",
+    "typescript": "^4.9.4"
+  },
+  "dependencies": {
+    "csv": "^6.2.5",
+    "validator": "^13.7.0"
+  }
+}
