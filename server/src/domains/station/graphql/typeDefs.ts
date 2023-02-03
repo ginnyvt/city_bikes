@@ -13,7 +13,7 @@ export default gql`
   }
 
   type StationEntity {
-    id: ID
+    id: Int!
     name: String!
     address: String!
     city: String!
