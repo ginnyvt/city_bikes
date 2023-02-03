@@ -37,7 +37,10 @@ export default {
       const act = container.get<ViewStationAction>(
         IDENTIFIERS.ViewStationAction
       );
-      return await act.handle(args.id);
+      const station = await act.handle(args.id);
+      return {
+        data: station,
+      };
     },
   },
 
