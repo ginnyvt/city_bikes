@@ -16,6 +16,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems } from "./listItems";
 
+import Journeys from "../Journeys";
+import { Route, Routes } from "react-router-dom";
+
 function Copyright(props: any) {
 	return (
 		<Typography variant="body2" color="text.secondary" align="center" {...props}>
@@ -138,7 +141,11 @@ function DashboardContent() {
 				>
 					<Toolbar />
 					<Container maxWidth="lg" sx={{ mt: 4, mb: 4 }}>
-						<Grid container spacing={3}></Grid>
+						<Grid container spacing={3}>
+							<Routes>
+								<Route path="/" element={<Journeys />} />
+							</Routes>
+						</Grid>
 						<Copyright sx={{ pt: 4 }} />
 					</Container>
 				</Box>
