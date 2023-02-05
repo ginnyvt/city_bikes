@@ -16,8 +16,9 @@ import MenuIcon from "@mui/icons-material/Menu";
 import ChevronLeftIcon from "@mui/icons-material/ChevronLeft";
 import { mainListItems } from "./listItems";
 
+import { Route, Routes, Link as RouterLink } from "react-router-dom";
 import Journeys from "../Journeys";
-import { Route, Routes } from "react-router-dom";
+import Stations from "../Stations";
 
 function Copyright(props: any) {
 	return (
@@ -110,7 +111,7 @@ function DashboardContent() {
 							<MenuIcon />
 						</IconButton>
 						<Typography component="h1" variant="h6" color="inherit" noWrap sx={{ flexGrow: 1 }}>
-							City Bikes
+							<RouterLink to="/">City Bikes</RouterLink>
 						</Typography>
 					</Toolbar>
 				</AppBar>
@@ -144,6 +145,8 @@ function DashboardContent() {
 						<Grid container spacing={3}>
 							<Routes>
 								<Route path="/" element={<Journeys />} />
+								<Route path="/journeys" element={<Journeys />} />
+								<Route path="/stations" element={<Stations />} />
 							</Routes>
 						</Grid>
 						<Copyright sx={{ pt: 4 }} />

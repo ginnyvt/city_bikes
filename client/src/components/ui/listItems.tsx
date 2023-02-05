@@ -11,11 +11,11 @@ export const mainListItems = (
 	<React.Fragment>
 		<ListItemButton>
 			<ListItemIcon>
-				<Link to="/">
+				<Link to="/journeys">
 					<RouteIcon />
 				</Link>
 			</ListItemIcon>
-			<Link to="/">
+			<Link to="/journeys">
 				<ListItemText primary="Journeys" />
 			</Link>
 		</ListItemButton>
