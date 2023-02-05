@@ -9,7 +9,11 @@ const columns: GridColDef[] = [
 		field: "id",
 		headerName: "ID",
 		renderCell: (params) => {
-			return <Link to={`/stations/${params.value}`}>{params.value}</Link>;
+			return (
+				<Link to={`/stations/${params.value}`} style={{ textDecoration: "underline" }}>
+					{params.value}
+				</Link>
+			);
 		},
 	},
 	{

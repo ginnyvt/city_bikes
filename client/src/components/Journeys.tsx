@@ -13,7 +13,12 @@ const columns: GridColDef[] = [
 		field: "departStation",
 		headerName: "Depart station",
 		renderCell: (params) => {
-			return <Link to={`/stations/${params.value.id}`}>{`${params.value.id} - ${params.value.name}`}</Link>;
+			return (
+				<Link
+					to={`/stations/${params.value.id}`}
+					style={{ textDecoration: "underline" }}
+				>{`${params.value.id} - ${params.value.name}`}</Link>
+			);
 		},
 		flex: 1,
 	},
@@ -22,7 +27,12 @@ const columns: GridColDef[] = [
 		field: "returnStation",
 		headerName: "Return station",
 		renderCell: (params) => {
-			return <Link to={`/stations/${params.value.id}`}>{`${params.value.id} - ${params.value.name}`}</Link>;
+			return (
+				<Link
+					to={`/stations/${params.value.id}`}
+					style={{ textDecoration: "underline" }}
+				>{`${params.value.id} - ${params.value.name}`}</Link>
+			);
 		},
 		flex: 1,
 	},
