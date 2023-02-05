@@ -19,6 +19,7 @@ import { mainListItems } from "./listItems";
 import { Route, Routes, Link as RouterLink } from "react-router-dom";
 import Journeys from "../Journeys";
 import Stations from "../Stations";
+import Station from "../Station";
 
 function Copyright(props: any) {
 	return (
@@ -147,6 +148,7 @@ function DashboardContent() {
 								<Route path="/" element={<Journeys />} />
 								<Route path="/journeys" element={<Journeys />} />
 								<Route path="/stations" element={<Stations />} />
+								<Route path="/stations/:id" element={<Station />} />
 							</Routes>
 						</Grid>
 						<Copyright sx={{ pt: 4 }} />
