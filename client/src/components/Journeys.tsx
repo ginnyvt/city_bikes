@@ -4,6 +4,9 @@ import { useQuery, gql } from "@apollo/client";
 import { Box, CircularProgress, Grid, Paper } from "@mui/material";
 import { Link } from "react-router-dom";
 
+import StationFilter from "./StationFilter";
+import { StationType } from "./StationFilter";
+
 const columns: GridColDef[] = [
 	{
 		field: "id",
@@ -62,6 +65,9 @@ export default function Journeys() {
 	const [sortOrder, setSortOrder] = React.useState("");
 	const [sortField, setSortField] = React.useState("");
 
+	const [filterDepartStation, setFilterDepartStation] = React.useState<StationType | null>(null);
+	const [filterReturnStation, setFilterReturnStation] = React.useState<StationType | null>(null);
+
 	const GET_JOURNEYS = gql`
 		query Journeys($page: Int, $perPage: Int, $sortOrder: String, $sortField: String, $filter: JourneyFilter) {
 			journeys(page: $page, perPage: $perPage, sortOrder: $sortOrder, sortField: $sortField, filter: $filter) {
@@ -95,6 +101,10 @@ export default function Journeys() {
 			perPage: pageSize,
 			sortOrder: sortOrder === "" ? null : sortOrder,
 			sortField: sortField === "" ? null : sortField,
+			filter: {
+				departStationId: filterDepartStation?.id,
+				returnStationId: filterReturnStation?.id,
+			},
 		},
 	});
 
@@ -132,6 +142,23 @@ export default function Journeys() {
 		<Grid item xs={12}>
 			<Paper sx={{ p: 2, display: "flex", flexDirection: "column" }}>
 				<div style={{ height: "100%", width: "100%" }}>
+					<Grid container spacing={2} sx={{ mb: 3 }}>
+						<Grid item md={6}>
+							<StationFilter
+								title="Depart Station"
+								onStationSelected={setFilterDepartStation}
+								selected={filterDepartStation}
+							></StationFilter>
+						</Grid>
+						<Grid item md={6}>
+							<StationFilter
+								title="Return Station"
+								onStationSelected={setFilterReturnStation}
+								selected={filterReturnStation}
+							></StationFilter>
+						</Grid>
+					</Grid>
+
 					<DataGrid
 						rows={data.journeys.data}
 						disableColumnMenu={true}
