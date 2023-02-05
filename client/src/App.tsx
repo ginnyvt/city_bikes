@@ -1,7 +1,8 @@
 import React from "react";
+import Dashboard from "./components/ui/Dashboard";
 
 function App() {
-	return <h2>Hello React TS Mui</h2>;
+	return <Dashboard />;
 }
 
 export default App;
