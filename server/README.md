@@ -1,6 +1,12 @@
 # City_bikes backend server
 
-Server description
+Backend API using Typescript, Express and Grapql for the City Bikes demo project.
+
+## Run locally
+
+1. Update your .env file with the your mariadb username and password.
+1. Run `npm run dev` to start the development server.
+1. Run `npm run test` to test the application.
 
 ## Technologies
 
