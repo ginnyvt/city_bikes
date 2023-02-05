@@ -1,7 +1,6 @@
 import { GoogleMap, useJsApiLoader, Marker } from "@react-google-maps/api";
 
 const googleMapsApiKey = process.env.REACT_APP_MAPS_API;
-console.log(googleMapsApiKey);
 
 interface MapProps {
 	lat: number;
@@ -10,7 +9,7 @@ interface MapProps {
 export default function Map(props: MapProps) {
 	const { isLoaded } = useJsApiLoader({
 		id: "google-map-script",
-		googleMapsApiKey: googleMapsApiKey!,
+		googleMapsApiKey: googleMapsApiKey || "",
 	});
 
 	const containerStyle = {
