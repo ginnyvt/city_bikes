@@ -15,6 +15,7 @@ A fullstack web application for displaying data from journeys made with city bik
 
 - [x] Import data from the CSV files to a Mariadb
 - [x] Validate data before importing
+- [x] Data that has empty value does not get imported
 - [x] Don't import journeys that lasted for less than ten seconds
 - [x] Don't import journeys that covered distances shorter than 10 meters
 
