@@ -5,9 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build": "npx del-cli ./dist && tsc",
-    "start": "npm run migrate && node ./dist/index.js",
+    "start": "npm run prisma-deploy && npm run generate-prisma && node ./dist/index.js",
     "dev": "npm run migrate && npx ts-node-dev ./src/index.ts ",
     "migrate": "npx prisma migrate dev",
+    "generate-prisma": "prisma generate",
+    "prisma-deploy": "npx prisma migrate deploy",
     "lint": "eslint ./src --ext .ts --fix",
     "release": "npx standard-version && git push --follow-tags origin main",
     "test": "jest --coverage",
