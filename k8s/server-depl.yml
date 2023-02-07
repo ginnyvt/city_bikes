@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
  name: city-bikes-server-depl
 spec:
- replicas: 2
+ replicas: 1
  selector:
   matchLabels:
    app: city-bikes-server
@@ -14,7 +14,7 @@ spec:
   spec:
    containers:
     - name: city-bikes-server
-      image: ginnyvt/city_bikes_node:1.0.0
+      image: ginnyvt/city_bikes_node:1.0.3
       envFrom:
        - secretRef:
           name: server-env
